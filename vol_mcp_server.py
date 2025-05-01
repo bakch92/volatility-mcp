@@ -10,7 +10,7 @@ def get_processes(dump_image_path: str) -> List[str]:
     Get the processes running in the memory image.
     """
     result = subprocess.run(
-        ['vol', '-f', dump_image_path, 'windows.pslist.PsList'],
+        ['python', '-m' 'vol', '-f', dump_image_path, 'windows.pslist.PsList'],
         capture_output=True,
         text=True
     )
@@ -22,7 +22,7 @@ def get_connections(dump_image_path: str) -> List[str]:
     Get the connections running in the memory image.
     """
     result = subprocess.run(
-        ['vol', '-f', dump_image_path, 'windows.netscan.NetScan'],
+        ['python', '-m' 'vol', '-f', dump_image_path, 'windows.netscan.NetScan'],
         capture_output=True,
         text=True
     )
@@ -35,7 +35,7 @@ def get_cmdline(dump_image_path: str) -> List[str]:
     """
 
     result = subprocess.run(
-        ['vol', '-f', dump_image_path, 'windows.cmdline.CmdLine'],
+        ['python', '-m' 'vol', '-f', dump_image_path, 'windows.cmdline.CmdLine'],
         capture_output=True,
         text=True
     )

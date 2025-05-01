@@ -1,0 +1,64 @@
+Metadata-Version: 2.4
+Name: volatility3
+Version: 2.26.2
+Summary: Memory forensics framework
+Author-email: Volatility Foundation <volatility@volatilityfoundation.org>
+License: VSL
+Project-URL: homepage, https://github.com/volatilityfoundation/volatility3/
+Project-URL: documentation, https://volatility3.readthedocs.io/
+Project-URL: repository, https://github.com/volatilityfoundation/volatility3
+Project-URL: issues, https://github.com/volatilityfoundation/volatility3/issues
+Keywords: volatility,memory,forensics,framework,windows,linux,volshell
+Requires-Python: >=3.8.0
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Requires-Dist: pefile>=2024.8.26
+Provides-Extra: full
+Requires-Dist: yara-python<5,>=4.5.1; extra == "full"
+Requires-Dist: capstone<6,>=5.0.3; extra == "full"
+Requires-Dist: pycryptodome<4,>=3.21.0; extra == "full"
+Requires-Dist: leechcorepyc<3,>=2.19.2; sys_platform != "darwin" and extra == "full"
+Requires-Dist: pillow<11.0.0,>=10.0.0; extra == "full"
+Provides-Extra: cloud
+Requires-Dist: gcsfs>=2024.10.0; extra == "cloud"
+Requires-Dist: s3fs>=2024.10.0; extra == "cloud"
+Provides-Extra: dev
+Requires-Dist: volatility3[cloud,full]; extra == "dev"
+Requires-Dist: jsonschema<5,>=4.23.0; extra == "dev"
+Requires-Dist: pyinstaller<7,>=6.5.0; extra == "dev"
+Requires-Dist: pyinstaller-hooks-contrib>=2024.9; extra == "dev"
+Requires-Dist: types-jsonschema<5,>=4.23.0; extra == "dev"
+Provides-Extra: test
+Requires-Dist: volatility3[dev]; extra == "test"
+Requires-Dist: pytest<9,>=8.3.3; extra == "test"
+Requires-Dist: yara-x<1,>=0.10.0; extra == "test"
+Provides-Extra: docs
+Requires-Dist: volatility3[dev]; extra == "docs"
+Requires-Dist: sphinx<9,>=4.0.0; extra == "docs"
+Requires-Dist: sphinx-autodoc-typehints<3,>=2.0.0; extra == "docs"
+Requires-Dist: sphinx-rtd-theme<4,>=3.0.1; extra == "docs"
+Dynamic: license-file
+
+# Volatility MCP 사용법
+
+## 1. 의존성 설치
+
+```python
+pip install -r requirements.txt
+```
+
+## 2. Cursor IDE 또는 Claude Desktop config 설정 파일 내 아래 MCP 서버 json 코드 설정
+
+```json
+{
+    "mcpServers": {
+      "vol": {
+         "command": "python",
+         "args": [
+          "/경로/volatility-mcp/vol_mcp_server.py"
+         ]
+       }
+    }
+}
+```
+

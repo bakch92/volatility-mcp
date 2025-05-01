@@ -6,7 +6,7 @@
 pip install -r requirements.txt
 ```
 
-## 2. Cusr IDE MCP 또는 Claude Desktop config 설정 파일 내 아래 MCP 서버 json 코드 설정
+## 2. Cursor IDE 또는 Claude Desktop config 설정 파일 내 아래 MCP 서버 json 코드 설정
 
 ```
 {

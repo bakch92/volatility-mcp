@@ -1,0 +1,2 @@
+volatility3==2.11.0
+fastmcp==1.0.0
